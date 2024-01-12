@@ -96,9 +96,10 @@ const sessionColorList = ['red','green','yellow','purple', 'sunset orange', 'ora
     }
 
     function PartyColumn(column, timeOut, cycles, colorList) {
+        colorList = shuffle(colorList);
         let index = 0;
 
-        for (let index = 0; index < 1500; index++) {
+        for (let i = 0; i < cycles; i++) {
             colorList.forEach(color => {
                 setTimeout(function () {
                     column.style.backgroundColor = color;
