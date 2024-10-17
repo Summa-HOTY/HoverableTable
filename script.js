@@ -1,5 +1,5 @@
 let sessionColorList = ['red','green','yellow','purple', 'sunset orange', 'orange', 'pink'];
-const isDefaultColorList = true;
+let isDefaultColorList = true;
 
 const rowCountInput = document.getElementById('rowCount');
 const columnCountInput = document.getElementById('columnCount');
@@ -14,7 +14,10 @@ const generateTableButton = document.getElementById('generateBtn');
 const partyButton = document.getElementById('partyBtn');
 
 addColorButton.onclick = function () {
-    if (isDefaultColorList) sessionColorList = [];
+    if (isDefaultColorList) {
+        sessionColorList = [];
+        isDefaultColorList = false;
+    }
     sessionColorList.push(colorPickerInput.value);
 }
 
